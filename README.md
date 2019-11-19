@@ -1,4 +1,5 @@
 # vue-mand-ui-template
+一个基于 `Vue` 和 `mand-mobile` 的移动端模板
 
 ## Project setup
 ```

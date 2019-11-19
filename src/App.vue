@@ -1,32 +1,77 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div class="mand">
+    <div class="md-wrapper">
+      <router-view></router-view>
     </div>
-    <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+<script>
+export default {
+  name: "app",
+};
+</script>
+
+<style lang="stylus" scoped>
+html {
+  background: #F3F4F5;
+}
+
+.mand {
+  position: relative;
+  min-height: 100%;
+  max-width: 750px;
+  font-size: 28px;
+  font-size-adjust: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  background: color-primary-background;
 
-#nav {
-  padding: 30px;
-}
+  .md-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 40px;
+    background: #fff;
+    border-bottom: 1px solid #f1efef;
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    p {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+      &.home {
+        top: 0;
+
+        .md-icon {
+          color: color-text-base;
+        }
+      }
+
+      &.name {
+        margin-left: h-gap-sm;
+        font-size: font-body-large;
+        font-weight: font-weight-normal;
+        color: color-text-base;
+      }
+
+      &.name-zh {
+        top: 9px;
+        margin-left: h-gap-sm;
+        font-size: font-body-large;
+        font-weight: font-weight-normal;
+        color: color-text-minor;
+      }
+    }
+  }
+
+  .md-wrapper {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+    padding-top: 130px;
+    clearfix();
+  }
 }
 </style>
